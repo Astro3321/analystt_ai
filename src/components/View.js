@@ -5,7 +5,10 @@ import Details from './Details'
 
 export default function View({ data }) {
     const [hiddenCardDisplay, setHiddenCardDisplay] = useState("none")
+    const [cardStyle, setCardStyle] = useState(null)
     const [loading, setLoading] = useState(false)
+
+    const cardBorder = {border: "2px solid red"}
 
     function handleClick(){
         setLoading(true)
@@ -13,27 +16,30 @@ export default function View({ data }) {
         if (hiddenCardDisplay === "none"){setHiddenCardDisplay("block")}
         else{setHiddenCardDisplay("none")}
 
+        if (cardStyle === null){setCardStyle(cardBorder)}
+        else{setCardStyle(null)}
+
         setLoading(false)
     }
 
     return <Container fluid id="frame">
-        <Card id="view-card">
+        <Card id="view-card" style={cardStyle}>
             <Card.Body>
                 <Row>
                     <Col>{data.company.name}</Col>
 
                     <Col>
-                        <Col><b>Contact</b>{"\n"}</Col>
+                        <Col><b>Contact</b></Col>
                         <Col>{data.name}</Col>
                     </Col>
 
                     <Col>
-                        <Col><b>City</b>{"\n"}</Col>
+                        <Col><b>City</b></Col>
                         <Col>{data.address.city}</Col>
                     </Col>
 
                     <Col>
-                        <Col><b>Zip Code</b>{"\n"}</Col>
+                        <Col><b>Zip Code</b></Col>
                         <Col>{data.address.zipcode}</Col>
                     </Col>
 

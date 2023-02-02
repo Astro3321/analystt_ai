@@ -16,7 +16,7 @@ export default function View({ data }) {
         setLoading(false)
     }
 
-    return <Container fluid>
+    return <Container fluid id="frame">
         <Card id="view-card">
             <Card.Body>
                 <Row>

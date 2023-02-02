@@ -4,7 +4,7 @@ import "./Details.css"
 
 export default function Details({ data }) {
     return <Container fluid>
-        <Card>
+        <Card id="hidden-card">
             <Card.Body>
                 <Row className="row">
                     <Col>

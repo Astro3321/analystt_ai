@@ -12,3 +12,7 @@
 .row{
     padding-bottom: 10px;
 }
+
+#hidden-card{
+    border-radius: 20px;
+}

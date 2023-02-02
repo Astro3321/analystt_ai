@@ -1,0 +1,15 @@
+#view-card{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 90%;
+    height: 9rem;
+    padding: 2.5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#view-btn{
+    background-color: red;
+    width: 8rem;
+    height: 2.7rem;
+}

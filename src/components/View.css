@@ -1,7 +1,7 @@
 #view-card{
     font-family: Arial, Helvetica, sans-serif;
     width: 90%;
-    height: 9rem;
+    height: fit-content;
     padding: 2.5rem;
     margin: auto;
     margin-bottom: 1rem;

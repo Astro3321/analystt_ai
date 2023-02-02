@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Card, Button, Col, Row } from 'react-bootstrap'
 import "./View.css"
+import Details from './Details'
 
 export default function View({ data }) {
+    const [hiddenCardDisplay, setHiddenCardDisplay] = useState("none")
+    const [loading, setLoading] = useState(false)
+
+    function handleClick(){
+        setLoading(true)
+
+        if (hiddenCardDisplay === "none"){setHiddenCardDisplay("block")}
+        else{setHiddenCardDisplay("none")}
+
+        setLoading(false)
+    }
+
     return <Container fluid>
         <Card id="view-card">
             <Card.Body>
@@ -25,8 +38,15 @@ export default function View({ data }) {
                     </Col>
 
                     <Col>
-                        <Button id="view-btn" variant="primary" type="button" value="View Details">View Details</Button>
+                        <Button id="view-btn" variant="primary" type="button" 
+                                value="View Details" onClick={handleClick} disabled={loading}>
+                            View Details
+                        </Button>
                     </Col>
+                </Row>
+
+                <Row style={{paddingTop: "2rem", display: `${hiddenCardDisplay}`}}>
+                    <Details data={data} />
                 </Row>
             </Card.Body>
         </Card>
